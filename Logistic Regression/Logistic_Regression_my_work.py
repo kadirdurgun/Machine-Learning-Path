@@ -39,23 +39,19 @@ print("y_train: ",y_train.shape)
 print("y_test: ",y_test.shape)
 
 # %% parameter initialize and sigmoid function
-# dimension = 30
+
 def initialize_weights_and_bias(dimension):
     
     w = np.full((dimension,1),0.01)
     b = 0.0
     return w,b
 
-
-# w,b = initialize_weights_and_bias(30)
-
 def sigmoid(z):
     
     y_head = 1/(1+ np.exp(-z))
     return y_head
-# print(sigmoid(0))
 
-# %%
+# %% Forward-Backward Propagation
 def forward_backward_propagation(w,b,x_train,y_train):
     # forward propagation
     z = np.dot(w.T,x_train) + b
@@ -134,5 +130,5 @@ logistic_regression(x_train, y_train, x_test, y_test,learning_rate = 1, num_iter
 from sklearn.linear_model import LogisticRegression
 lr = LogisticRegression()
 lr.fit(x_train.T,y_train.T)
-print("test accuracy {}".format(lr.score(x_test.T,y_test.T)))
+print("test accuracy via Sckit-Learn {}".format(lr.score(x_test.T,y_test.T)))
 #"""

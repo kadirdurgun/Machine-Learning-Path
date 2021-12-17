@@ -15,7 +15,7 @@ from sklearn import metrics
 
 
 #%%
-    df = pd.read_csv("50_Startups.csv")
+df = pd.read_csv("50_Startups.csv")
 
 #%%
 y = df.Profit.values.reshape(-1,1)
